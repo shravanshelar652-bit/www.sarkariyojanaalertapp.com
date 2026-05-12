@@ -12,3 +12,7 @@ export default defineConfig(async () => {
   } catch {}
   return { plugins };
 })
+export default defineConfig({
+  base: '/',
+  plugins: [react()],
+})
