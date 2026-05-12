@@ -2,7 +2,6 @@ name: Deploy Vite Site
 on:
   push:
     branches: ["main"]
-  workflow_dispatch:
 permissions:
   contents: read
   pages: write
@@ -17,11 +16,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -36,4 +34,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
+
