@@ -313,3 +313,14 @@ export default function App() {
     {selectedScheme && <SchemeDetail scheme={selectedScheme} user={user} language={language} onClose={() => setSelectedScheme(null)} onApplied={reloadAll} />}
   </div>;
 }
+export default function App() {
+  return (
+    <div style={{
+      padding: "40px",
+      fontSize: "30px",
+      textAlign: "center"
+    }}>
+      Sarkari Yojana Alert Working
+    </div>
+  );
+}
